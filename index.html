@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Calculatrice en ligne discrete">
+  <title>CalcStudy</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/calcsolver.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Calculatrice</h1>
+    <p>Outil scolaire</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <div class="display">
+        <div id="expr"></div>
+        <output id="result">0</output>
+      </div>
+      <div class="keys" id="keys">
+        <button data-a="c">AC</button><button data-a="d">DEL</button><button data-v="%">%</button><button data-v="/">/</button>
+        <button data-v="7">7</button><button data-v="8">8</button><button data-v="9">9</button><button data-v="*">*</button>
+        <button data-v="4">4</button><button data-v="5">5</button><button data-v="6">6</button><button data-v="-">-</button>
+        <button data-v="1">1</button><button data-v="2">2</button><button data-v="3">3</button><button data-v="+">+</button>
+        <button data-v="0" class="span2">0</button><button data-v=".">.</button><button data-a="e">=</button>
+      </div>
+      <p class="hint">Code discret: <code>00000</code></p>
+    </section>
+
+    <aside class="panel">
+      <h2>Historique</h2>
+      <ul id="history"><li>Aucun calcul pour le moment.</li></ul>
+    </aside>
+  </main>
+
+  <script src="js/calcsolver.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Espace ressources discret">
+  <title>Espace Ressources</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/resources.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html">Retour</a>
+    <h1>Espace Ressources</h1>
+    <p>Ateliers locaux et ressources externes</p>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="tabs">
+        <button class="tab active" data-tab="duo">Duo local</button>
+        <button class="tab" data-tab="solo">Solo</button>
+        <button class="tab" data-tab="external">Externe</button>
+      </div>
+      <p id="tab-note">6 ateliers duo locaux</p>
+    </section>
+
+    <section class="panel" id="duo-pane">
+      <h2>Ateliers Duo</h2>
+      <div class="grid" id="duo-cards"></div>
+      <div class="mount" id="duo-mount"><p>Choisis un atelier duo.</p></div>
+    </section>
+
+    <section class="panel" id="solo-pane" hidden>
+      <h2>Ateliers Solo</h2>
+      <div class="grid" id="solo-cards"></div>
+      <div class="mount" id="solo-mount"><p>Choisis un atelier solo.</p></div>
+    </section>
+
+    <section class="panel" id="external-pane" hidden>
+      <h2>Ressources Externes</h2>
+      <div class="grid" id="external-cards"></div>
+      <iframe id="external-frame" title="Ressource externe" loading="lazy"></iframe>
+      <p id="frame-note">Si le cadre est vide, utilise "Ouvrir".</p>
+    </section>
+  </main>
+
+  <script src="js/resources.js"></script>
+</body>
+</html>
