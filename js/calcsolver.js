@@ -9,9 +9,10 @@
 
   const safe = (s) => /^[0-9+\-*/%.() ]+$/.test(s);
   const show = () => { exprEl.textContent = expr; resultEl.textContent = expr || "0"; };
+  const escapeHtml = (s) => s.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
   const pushHistory = (line) => {
     history.unshift(line); if (history.length > 12) history.length = 12;
-    historyEl.innerHTML = history.map((h) => `<li>${h.replaceAll("<","&lt;")}</li>`).join("");
+    historyEl.innerHTML = history.map((h) => `<li>${escapeHtml(h)}</li>`).join("");
   };
   const clearAll = () => { expr = ""; zeroStreak = 0; show(); };
   const del = () => { expr = expr.slice(0, -1); zeroStreak = 0; show(); };
@@ -45,7 +46,7 @@
     if (/[0-9+\-*/.%()]/.test(e.key)) onChar(e.key);
     if (e.key === "Enter" || e.key === "=") evalExpr();
     if (e.key === "Backspace") del();
-    if (e.key.toLowerCase() === "c") clearAll();
+    if (e.key.toLowerCase() === "c" || e.key === "Escape") clearAll();
   });
 
   show();

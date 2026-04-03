@@ -3,45 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Espace ressources discret">
-  <title>Espace Ressources</title>
+  <meta name="description" content="Centre discret de ressources interactives">
+  <title>Centre Ressources</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/resources.css">
 </head>
 <body>
-  <header class="topbar">
-    <a href="index.html">Retour</a>
-    <h1>Espace Ressources</h1>
-    <p>Ateliers locaux et ressources externes</p>
+  <a class="skip-link" href="#resource-main">Aller au contenu</a>
+
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <strong>CalcSolver</strong>
+      </div>
+      <nav class="quick-nav" aria-label="Navigation rapide">
+        <a href="index.html">Calculator</a>
+        <a href="resources.html" class="active">Games Hub</a>
+      </nav>
+    </div>
+    <h1>Games Hub</h1>
+    <p>Popular browser games and quick access links.</p>
   </header>
 
-  <main class="wrap">
+  <main class="wrap" id="resource-main">
     <section class="panel">
-      <div class="tabs">
-        <button class="tab active" data-tab="duo">Duo local</button>
-        <button class="tab" data-tab="solo">Solo</button>
-        <button class="tab" data-tab="external">Externe</button>
-      </div>
-      <p id="tab-note">6 ateliers duo locaux</p>
+      <nav class="tabs" role="tablist" aria-label="Navigation des sections">
+        <button class="tab active" id="tab-duo" data-tab="duo" role="tab" aria-selected="true" aria-controls="duo-pane" tabindex="0">2 Players</button>
+        <button class="tab" id="tab-solo" data-tab="solo" role="tab" aria-selected="false" aria-controls="solo-pane" tabindex="-1">Solo</button>
+        <button class="tab" id="tab-external" data-tab="external" role="tab" aria-selected="false" aria-controls="external-pane" tabindex="-1">External</button>
+      </nav>
+      <p class="note" id="tab-note" aria-live="polite">6 local 2-player games.</p>
     </section>
 
-    <section class="panel" id="duo-pane">
-      <h2>Ateliers Duo</h2>
+    <section class="panel" id="duo-pane" role="tabpanel" aria-labelledby="tab-duo">
+      <h2>2 Player Local Games</h2>
       <div class="grid" id="duo-cards"></div>
-      <div class="mount" id="duo-mount"><p>Choisis un atelier duo.</p></div>
+      <div class="mount" id="duo-mount"><p>Select a local 2-player game.</p></div>
     </section>
 
-    <section class="panel" id="solo-pane" hidden>
-      <h2>Ateliers Solo</h2>
+    <section class="panel" id="solo-pane" role="tabpanel" aria-labelledby="tab-solo" hidden>
+      <h2>Solo Local Games</h2>
       <div class="grid" id="solo-cards"></div>
-      <div class="mount" id="solo-mount"><p>Choisis un atelier solo.</p></div>
+      <div class="mount" id="solo-mount"><p>Select a solo game.</p></div>
     </section>
 
-    <section class="panel" id="external-pane" hidden>
-      <h2>Ressources Externes</h2>
+    <section class="panel" id="external-pane" role="tabpanel" aria-labelledby="tab-external" hidden>
+      <h2>External Games</h2>
+      <div class="toolbar">
+        <label class="sr-only" for="external-search">Search external games</label>
+        <input id="external-search" type="search" placeholder="Search: soccer, basket, random, legends">
+        <label class="sr-only" for="external-filter">Filter games</label>
+        <select id="external-filter" aria-label="Main filter">
+          <option value="all">All</option>
+          <option value="soccer">Soccer</option>
+          <option value="basket">Basket</option>
+          <option value="random">Random</option>
+          <option value="legends">Legends</option>
+          <option value="duo">2 Players</option>
+          <option value="reliable">Top Rated</option>
+        </select>
+        <label class="sr-only" for="external-sort">Sort catalog</label>
+        <select id="external-sort" aria-label="Sort catalog">
+          <option value="quality">Quality</option>
+          <option value="name">Name</option>
+          <option value="checked">Last checked</option>
+        </select>
+        <button id="open-random">Random game</button>
+      </div>
+      <p class="note" id="external-count"></p>
       <div class="grid" id="external-cards"></div>
-      <iframe id="external-frame" title="Ressource externe" loading="lazy"></iframe>
-      <p id="frame-note">Si le cadre est vide, utilise "Ouvrir".</p>
+      <iframe id="external-frame" title="Archive externe" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+      <p class="note" id="frame-note" role="status" aria-live="polite">If embed is blocked, use Open.</p>
     </section>
   </main>
 
