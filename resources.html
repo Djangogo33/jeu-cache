@@ -28,27 +28,11 @@
 
   <main class="wrap" id="resource-main">
     <section class="panel">
-      <nav class="tabs" role="tablist" aria-label="Navigation des sections">
-        <button class="tab active" id="tab-duo" data-tab="duo" role="tab" aria-selected="true" aria-controls="duo-pane" tabindex="0">Duo local</button>
-        <button class="tab" id="tab-solo" data-tab="solo" role="tab" aria-selected="false" aria-controls="solo-pane" tabindex="-1">Solo</button>
-        <button class="tab" id="tab-external" data-tab="external" role="tab" aria-selected="false" aria-controls="external-pane" tabindex="-1">Catalogue</button>
-      </nav>
-      <p class="note" id="tab-note" aria-live="polite">6 modules duo locaux.</p>
+      <h2>Ressources Externes</h2>
+      <p class="note" id="tab-note" aria-live="polite">Catalogue cible: 8 liens Twoplayergames.</p>
     </section>
 
-    <section class="panel" id="duo-pane" role="tabpanel" aria-labelledby="tab-duo">
-      <h2>Modules Duo Locaux</h2>
-      <div class="grid" id="duo-cards"></div>
-      <div class="mount" id="duo-mount"><p>Sélectionnez un module duo local.</p></div>
-    </section>
-
-    <section class="panel" id="solo-pane" role="tabpanel" aria-labelledby="tab-solo" hidden>
-      <h2>Modules Solo Locaux</h2>
-      <div class="grid" id="solo-cards"></div>
-      <div class="mount" id="solo-mount"><p>Sélectionnez un module solo local.</p></div>
-    </section>
-
-    <section class="panel" id="external-pane" role="tabpanel" aria-labelledby="tab-external" hidden>
+    <section class="panel" id="external-pane">
       <h2>Catalogue Externe Qualifié</h2>
       <div class="toolbar" id="catalog-toolbar">
         <label class="sr-only" for="external-search">Recherche catalogue</label>
@@ -57,20 +41,13 @@
         <select id="external-filter" aria-label="Main filter">
           <option value="all">Tous</option>
           <option value="duo">Duo</option>
-          <option value="solo">Solo</option>
           <option value="basket">Basket</option>
           <option value="soccer">Soccer</option>
           <option value="random">Random</option>
-          <option value="legends">Legends</option>
-          <option value="new">Nouveaux</option>
-          <option value="embed">Embed OK</option>
-          <option value="top">Top qualité</option>
         </select>
         <label class="sr-only" for="external-sort">Tri catalogue</label>
         <select id="external-sort" aria-label="Sort catalog">
           <option value="quality">Qualité</option>
-          <option value="popularity">Popularité</option>
-          <option value="checked">Mise à jour</option>
           <option value="name">A-Z</option>
         </select>
         <label class="sr-only" for="external-collection">Collection rapide</label>
@@ -79,7 +56,6 @@
           <option value="duo-fast">Collection: Duo rapide</option>
           <option value="basket-like">Collection: Basket-like</option>
           <option value="soccer-like">Collection: Soccer-like</option>
-          <option value="short-break">Collection: Pause 5 min</option>
         </select>
         <button id="open-random" type="button">Ouvrir aléatoire</button>
       </div>
@@ -89,9 +65,6 @@
         <button type="button" class="chip" data-chip="basket">Basket</button>
         <button type="button" class="chip" data-chip="soccer">Soccer</button>
         <button type="button" class="chip" data-chip="random">Random</button>
-        <button type="button" class="chip" data-chip="top">Top</button>
-        <button type="button" class="chip" data-chip="new">Nouveaux</button>
-        <button type="button" class="chip" data-chip="embed">Embed OK</button>
       </div>
       <p class="note" id="external-count">0 ressource</p>
       <div class="grid" id="external-cards"></div>
