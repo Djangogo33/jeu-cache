@@ -30,6 +30,11 @@
     { id: "basketball-stars", name: "Basketball Stars", desc: "Basket arcade duo.", url: "https://www.twoplayergames.org/gameframe/basketball-stars", tags: ["duo", "basket"], players: "duo", qualityScore: 92, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
     { id: "rooftop-snipers", name: "Rooftop Snipers", desc: "Snipers duel chaos.", url: "https://www.twoplayergames.org/gameframe/rooftop-snipers", tags: ["duo", "random"], players: "duo", qualityScore: 91, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
     { id: "tank-stars", name: "Tank Stars", desc: "Duel tanks strategy.", url: "https://www.twoplayergames.org/gameframe/tank-stars", tags: ["duo", "random"], players: "duo", qualityScore: 90, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
+    { id: "mini-battles", name: "MiniBattles", desc: "Collection mini-jeux duo.", url: "https://files.twoplayergames.org/files/games/o2/MiniBattles/index.html", tags: ["duo", "random"], players: "duo", qualityScore: 89, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
+    { id: "2-3-4-player-games", name: "2-3-4 Player Games", desc: "Pack multi-joueurs local.", url: "https://www.twoplayergames.org/gameframe/2-3-4-player-games", tags: ["duo", "random"], players: "duo", qualityScore: 88, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
+    { id: "tag-run", name: "Tag Run", desc: "Course/tag arcade rapide.", url: "https://www.twoplayergames.org/gameframe/tag-run", tags: ["duo", "random"], players: "duo", qualityScore: 87, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
+    { id: "two-ball-3d", name: "Two Ball 3D", desc: "Reflexes duo en 3D.", url: "https://www.twoplayergames.org/gameframe/two-ball-3d", tags: ["duo", "random"], players: "duo", qualityScore: 87, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
+    { id: "stick-badminton-2", name: "Stick Badminton 2", desc: "Badminton arcade 2 joueurs.", url: "https://www.twoplayergames.org/gameframe/stick-badminton-2", tags: ["duo", "random"], players: "duo", qualityScore: 88, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
   ];
 
   const state = {
@@ -201,6 +206,6 @@
   });
 
   applyReaderSize("standard");
-  setStatus("Catalogue charge: 8 liens Twoplayergames.");
+  setStatus("Catalogue charge: 13 liens Twoplayergames.");
   renderCards();
 })();
