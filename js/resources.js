@@ -22,7 +22,7 @@
   };
 
   const externalUnique = [
-    { id: "basket-direct", name: "Basket Random (Direct Embed)", desc: "Lien direct Basket Random.", url: "https://files.twoplayergames.org/files/games/other/Basket_Random/index.html", tags: ["duo", "basket", "random"], players: "duo", qualityScore: 98, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
+    { id: "basket-direct", name: "Basket Random", desc: "Basket random 2 joueurs.", url: "https://files.twoplayergames.org/files/games/other/Basket_Random/index.html", tags: ["duo", "basket", "random"], players: "duo", qualityScore: 98, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
     { id: "soccer-random", name: "Soccer Random", desc: "Soccer random 2 joueurs.", url: "https://www.twoplayergames.org/gameframe/soccer-random", tags: ["duo", "soccer", "random"], players: "duo", qualityScore: 96, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
     { id: "volley-random", name: "Volley Random", desc: "Volley random 2 joueurs.", url: "https://www.twoplayergames.org/gameframe/volley-random", tags: ["duo", "random"], players: "duo", qualityScore: 94, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
     { id: "football-legends", name: "Football Legends 2021", desc: "Mode legends football.", url: "https://www.twoplayergames.org/gameframe/football-legends-2021", tags: ["duo", "soccer", "random"], players: "duo", qualityScore: 95, sourceType: "twoplayergames", embedLikely: true, lastChecked: "2026-04-03", status: "active" },
