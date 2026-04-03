@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Centre discret de ressources interactives">
-  <title>Centre Ressources</title>
+  <title>CalcSolver | Ressources</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/resources.css">
 </head>
@@ -19,62 +19,106 @@
       </div>
       <nav class="quick-nav" aria-label="Navigation rapide">
         <a href="index.html">Calculator</a>
-        <a href="resources.html" class="active">Games Hub</a>
+        <a href="resources.html" class="active">Resources</a>
       </nav>
     </div>
-    <h1>Games Hub</h1>
-    <p>Popular browser games and quick access links.</p>
+    <h1>Espace Ressources</h1>
+    <p>Catalogue étendu de modules interactifs avec lecteur intégré.</p>
   </header>
 
   <main class="wrap" id="resource-main">
     <section class="panel">
       <nav class="tabs" role="tablist" aria-label="Navigation des sections">
-        <button class="tab active" id="tab-duo" data-tab="duo" role="tab" aria-selected="true" aria-controls="duo-pane" tabindex="0">2 Players</button>
+        <button class="tab active" id="tab-duo" data-tab="duo" role="tab" aria-selected="true" aria-controls="duo-pane" tabindex="0">Duo local</button>
         <button class="tab" id="tab-solo" data-tab="solo" role="tab" aria-selected="false" aria-controls="solo-pane" tabindex="-1">Solo</button>
-        <button class="tab" id="tab-external" data-tab="external" role="tab" aria-selected="false" aria-controls="external-pane" tabindex="-1">External</button>
+        <button class="tab" id="tab-external" data-tab="external" role="tab" aria-selected="false" aria-controls="external-pane" tabindex="-1">Catalogue</button>
       </nav>
-      <p class="note" id="tab-note" aria-live="polite">6 local 2-player games.</p>
+      <p class="note" id="tab-note" aria-live="polite">6 modules duo locaux.</p>
     </section>
 
     <section class="panel" id="duo-pane" role="tabpanel" aria-labelledby="tab-duo">
-      <h2>2 Player Local Games</h2>
+      <h2>Modules Duo Locaux</h2>
       <div class="grid" id="duo-cards"></div>
-      <div class="mount" id="duo-mount"><p>Select a local 2-player game.</p></div>
+      <div class="mount" id="duo-mount"><p>Sélectionnez un module duo local.</p></div>
     </section>
 
     <section class="panel" id="solo-pane" role="tabpanel" aria-labelledby="tab-solo" hidden>
-      <h2>Solo Local Games</h2>
+      <h2>Modules Solo Locaux</h2>
       <div class="grid" id="solo-cards"></div>
-      <div class="mount" id="solo-mount"><p>Select a solo game.</p></div>
+      <div class="mount" id="solo-mount"><p>Sélectionnez un module solo local.</p></div>
     </section>
 
     <section class="panel" id="external-pane" role="tabpanel" aria-labelledby="tab-external" hidden>
-      <h2>External Games</h2>
-      <div class="toolbar">
-        <label class="sr-only" for="external-search">Search external games</label>
-        <input id="external-search" type="search" placeholder="Search: soccer, basket, random, legends">
-        <label class="sr-only" for="external-filter">Filter games</label>
+      <h2>Catalogue Externe Qualifié</h2>
+      <div class="toolbar" id="catalog-toolbar">
+        <label class="sr-only" for="external-search">Recherche catalogue</label>
+        <input id="external-search" type="search" placeholder="Rechercher: duo, basket, soccer, random...">
+        <label class="sr-only" for="external-filter">Filtre principal</label>
         <select id="external-filter" aria-label="Main filter">
-          <option value="all">All</option>
-          <option value="soccer">Soccer</option>
+          <option value="all">Tous</option>
+          <option value="duo">Duo</option>
+          <option value="solo">Solo</option>
           <option value="basket">Basket</option>
+          <option value="soccer">Soccer</option>
           <option value="random">Random</option>
           <option value="legends">Legends</option>
-          <option value="duo">2 Players</option>
-          <option value="reliable">Top Rated</option>
+          <option value="new">Nouveaux</option>
+          <option value="embed">Embed OK</option>
+          <option value="top">Top qualité</option>
         </select>
-        <label class="sr-only" for="external-sort">Sort catalog</label>
+        <label class="sr-only" for="external-sort">Tri catalogue</label>
         <select id="external-sort" aria-label="Sort catalog">
-          <option value="quality">Quality</option>
-          <option value="name">Name</option>
-          <option value="checked">Last checked</option>
+          <option value="quality">Qualité</option>
+          <option value="popularity">Popularité</option>
+          <option value="checked">Mise à jour</option>
+          <option value="name">A-Z</option>
         </select>
-        <button id="open-random">Random game</button>
+        <label class="sr-only" for="external-collection">Collection rapide</label>
+        <select id="external-collection" aria-label="Collection rapide">
+          <option value="all">Collection: Toutes</option>
+          <option value="duo-fast">Collection: Duo rapide</option>
+          <option value="basket-like">Collection: Basket-like</option>
+          <option value="soccer-like">Collection: Soccer-like</option>
+          <option value="short-break">Collection: Pause 5 min</option>
+        </select>
+        <button id="open-random" type="button">Ouvrir aléatoire</button>
       </div>
-      <p class="note" id="external-count"></p>
+      <div class="chip-row" id="quick-filters" aria-label="Filtres rapides">
+        <button type="button" class="chip active" data-chip="all">Tous</button>
+        <button type="button" class="chip" data-chip="duo">Duo</button>
+        <button type="button" class="chip" data-chip="basket">Basket</button>
+        <button type="button" class="chip" data-chip="soccer">Soccer</button>
+        <button type="button" class="chip" data-chip="random">Random</button>
+        <button type="button" class="chip" data-chip="top">Top</button>
+        <button type="button" class="chip" data-chip="new">Nouveaux</button>
+        <button type="button" class="chip" data-chip="embed">Embed OK</button>
+      </div>
+      <p class="note" id="external-count">0 ressource</p>
       <div class="grid" id="external-cards"></div>
-      <iframe id="external-frame" title="Archive externe" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
-      <p class="note" id="frame-note" role="status" aria-live="polite">If embed is blocked, use Open.</p>
+      <div class="pager" id="catalog-pager">
+        <button type="button" id="catalog-prev">Précédent</button>
+        <p class="note" id="catalog-page-note" aria-live="polite">Page 1</p>
+        <button type="button" id="catalog-next">Suivant</button>
+      </div>
+
+      <section class="reader" id="reader" aria-label="Lecteur intégré">
+        <div class="reader-head">
+          <h3 id="reader-title">Lecteur intégré</h3>
+          <div class="reader-actions">
+            <button type="button" id="reader-reload">Relancer</button>
+            <button type="button" id="reader-open">Ouvrir fenêtre</button>
+            <button type="button" id="reader-copy">Copier lien</button>
+          </div>
+        </div>
+        <p class="note" id="frame-note" role="status" aria-live="polite">Sélectionnez une ressource et utilisez “Lancer ici”.</p>
+        <iframe
+          id="external-frame"
+          title="Lecteur ressource"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          sandbox="allow-scripts allow-forms allow-popups allow-pointer-lock allow-popups-to-escape-sandbox"
+        ></iframe>
+      </section>
     </section>
   </main>
 
