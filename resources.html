@@ -105,6 +105,12 @@
         <div class="reader-head">
           <h3 id="reader-title">Lecteur intégré</h3>
           <div class="reader-actions">
+            <label class="sr-only" for="reader-size">Taille du lecteur</label>
+            <select id="reader-size" aria-label="Taille du lecteur">
+              <option value="compact">Compact</option>
+              <option value="standard" selected>Standard</option>
+              <option value="large">Grand</option>
+            </select>
             <button type="button" id="reader-reload">Relancer</button>
             <button type="button" id="reader-open">Ouvrir fenêtre</button>
             <button type="button" id="reader-copy">Copier lien</button>
@@ -116,7 +122,7 @@
           title="Lecteur ressource"
           loading="lazy"
           referrerpolicy="no-referrer"
-          sandbox="allow-scripts allow-forms allow-popups allow-pointer-lock allow-popups-to-escape-sandbox"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-pointer-lock allow-popups-to-escape-sandbox"
         ></iframe>
       </section>
     </section>

@@ -331,13 +331,25 @@ button:disabled {
   gap: 7px;
   flex-wrap: wrap;
 }
+#reader-size {
+  min-width: 120px;
+}
 #external-frame {
   width: 100%;
-  min-height: 520px;
+  height: clamp(440px, 68vh, 820px);
   margin-top: 10px;
   border: 1px solid #d2e1f5;
   border-radius: 12px;
   background: #fff;
+}
+.reader.size-compact #external-frame {
+  height: clamp(360px, 56vh, 620px);
+}
+.reader.size-standard #external-frame {
+  height: clamp(440px, 68vh, 820px);
+}
+.reader.size-large #external-frame {
+  height: clamp(540px, 82vh, 980px);
 }
 
 @media (max-width: 1060px) {
@@ -359,7 +371,10 @@ button:disabled {
     grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   }
   #external-frame {
-    min-height: 420px;
+    height: clamp(420px, 62vh, 760px);
+  }
+  .reader.size-large #external-frame {
+    height: clamp(500px, 76vh, 920px);
   }
 }
 

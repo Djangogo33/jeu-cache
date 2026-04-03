@@ -26,6 +26,7 @@
     readerTitle: document.getElementById("reader-title"),
     status: document.getElementById("frame-note"),
     frame: document.getElementById("external-frame"),
+    readerSize: document.getElementById("reader-size"),
     readerReload: document.getElementById("reader-reload"),
     readerOpen: document.getElementById("reader-open"),
     readerCopy: document.getElementById("reader-copy"),
@@ -641,6 +642,12 @@
     document.dispatchEvent(new CustomEvent("reader-status", { detail: { message } }));
   }
 
+  function applyReaderSize(size) {
+    ui.reader.classList.remove("size-compact", "size-standard", "size-large");
+    ui.reader.classList.add(`size-${size}`);
+    setReaderStatus(`Taille lecteur: ${size}`);
+  }
+
   function openInWindow(item) {
     window.open(item.url, "_blank", "noopener,noreferrer");
     popularity[item.id] = (popularity[item.id] || 0) + 1;
@@ -816,6 +823,9 @@
         setReaderStatus("Copie bloquee par le navigateur.");
       }
     });
+    ui.readerSize.addEventListener("change", () => {
+      applyReaderSize(ui.readerSize.value);
+    });
 
     window.addEventListener("keydown", (event) => {
       if (event.altKey && event.key.toLowerCase() === "l") {
@@ -828,6 +838,7 @@
 
   async function init() {
     bindExternalControls();
+    applyReaderSize(ui.readerSize.value || "standard");
     ui.filter.value = "embed";
     state.filterChip = "embed";
     quickFilters.forEach((chip) => chip.classList.toggle("active", chip.dataset.chip === "embed"));
